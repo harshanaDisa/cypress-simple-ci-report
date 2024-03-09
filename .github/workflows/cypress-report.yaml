@@ -12,11 +12,10 @@ jobs:
   cypress-e2e-chrome81:
     name: Run on Chrome 81
     runs-on: ubuntu-latest
-    container: cypress/browsers:node14.17.6-slim-chrome100-ff99-edge
+    container: docker pull cypress/browsers:node12.0.0-chrome75
     steps:
       - uses: actions/checkout@v2
-      - name: Clear npm cache
-        run: npm cache clean --force
+      
       - name: Install a project with a clean slate
         run: |
           npm ci
