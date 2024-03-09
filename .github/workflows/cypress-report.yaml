@@ -15,6 +15,10 @@ jobs:
     container: cypress/browsers:latest
     steps:
       - uses: actions/checkout@v2
+      - name: Print npm bin path
+        run: echo $(npm bin)
+      - name: Install Cypress globally
+        run: sudo npm install -g cypress
       
       - name: Install a project with a clean slate
         run: |
