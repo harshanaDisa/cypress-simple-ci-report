@@ -11,7 +11,7 @@ jobs:
   
   cypress-e2e-chrome81:
     name: Run on Chrome 81
-    runs-on: P0223-0012
+    runs-on: self-hosted
     container: cypress/browsers:node13.8.0-chrome81-ff75
     steps:
       - uses: actions/checkout@v2
