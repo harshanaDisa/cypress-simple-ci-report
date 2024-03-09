@@ -12,7 +12,7 @@ jobs:
   cypress-e2e-chrome81:
     name: Run on Chrome 81
     runs-on: ubuntu-latest
-    container: cypress/browsers:node16.3.0-chrome81-ff87
+    container: cypress/browsers:node16.16.0-chrome107-ff107-edge
     steps:
       - uses: actions/checkout@v2
       
@@ -40,3 +40,8 @@ jobs:
       
       - name: Deploy report page
         uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
